@@ -1,0 +1,238 @@
+---
+GenerationParams:
+  MapScale: 1.0          # how much the sectors are spread out  
+  # float [0..1] solar systems are more like a cookie than a ball. the lower the value, the flatter the system
+  SolarSystemSqueezeMinMax: [0.005, 0.010] 
+  # float [0..1] probability a warp connection will be one-way
+  OneWayWarpProb: 0
+  UniqueStarterPlanet: true
+  
+  #==== 1st Step of SolarSystem Generation: setting amount and playfield types  for System Content  ===
+
+  PlanetCountProbs:
+     - '0 : 0.1,   1 : 0.5,  2 : 0.3,  3 : 0.1'           # 1 - GasPlanets: defines the min-max amount of playfields. Each Amount can have an individual probability. Combinations of amounts with and without probabilies is possible. If no individual probability is set, the 'amount number' will get an average of the remaining probability. Example [0:0.1,3]  > 0 has probability 10%. 1,2 and 3 share the other 90% = 1 has 30%, 2 has 30%, 3 has 30%
+     - '0 : 0.4,   1 : 0.5,  2 : 0.1'                     # 2 - Hot Planets
+     - '0 : 0.5,   1 : 0.4,  2 : 0.1'                     # 3 - Dry planets
+     - '0 : 0.8,   1 : 0.2'                               # 5 - Alien planets
+     - '0 : 0.1,   1 : 0.6,  2 : 0.3'                     # 7 - Barren
+  #Organizes the GasPlanets class lables and their [probability] to show up for any of the 'GasPlanets slots' drawn in the 1st Step
+  PlanetLists:           # Lable name depicts, in a descriptive way, the class or global or visual approach of the playfields summarized under this lable; playfields are added in the *Types sections
+    - 'Jupiter:0.45, Saturn: 0.35, Neptun:0.2'
+    - 'LavaPvP:0.5'
+    - 'AridPvP:0.4'
+    - 'AlienPvP:0.2'
+    - 'BarrenPvP:0.5'
+
+  POICountProbs: '0 : 0.05,  1 : 0.1,  2 : 0.1,  3 : 0.2,  4 : 0.2,  5 : 0.2,  6 : 0.1,  7 : 0.05'
+  POIs: 'SpaceEmpty: 0.45, AsteroidFieldPvP: 0.3, AsteroidFieldJunkyardPvP: 0.25'  
+  
+ # for 3D map purposes, limit climate (optional for non-terrain types) to one of Lava, Temperate, Snow, Desert, Alien, or Barren
+  PlanetTypes:      # come up with general categories of planet (playfield) types for distance purposes
+      - Name: Jupiter 
+        Color: [0.22,0.54,0.69,  0.50,0.33,0.25,  0.68,0.56,0.26,  0.45,0.20,0.09,  0.38,0.27,0.40]
+        # Distance: [100, 300]
+        Icon: GasGiant
+        Placement:                  # Defines where the playfield appears in the Solar system, related to the Galaxy.ecf Sun parameters: HabitableTemperate, HabitableHot, HabitableCold, InnerSystem, OuterSystem
+            - InnerSystem
+            - HabitableHot
+            - HabitableTemperate
+            - HabitableCold
+            - OuterSystem
+        MoonProb: '3:0.45, 4:0.35, 5:0.2'    # NEW definition of Moon Prob PLUS Count; Gauss. >> can be used for all other definitions in that file!!
+        MoonType: [DefaultMoonPvP, MoonIcePvP, MoonNascentPvP]   
+        # Climate: Gas               # REQUIRED? > not required anymore
+        # PlayfieldLevel: [1,10]     # REQUIRED? > sets default value if not set
+        ForceSizeClass: [9,11]       # this is important for a gasgiant! if this is specified, the moons will not be put in the same sector as the gas giant (as the gas giant fills the whole sector)
+        ForcePlanetType: [JupiterBlue, JupiterBrown, JupiterYellow, JupiterBrown2, JupiterPurple]
+        HasOrbit: false              # also a gasgiant may never have an orbit!
+        Playfields:
+            - GasGiant
+      - Name: Saturn 
+        Color: [0.22,0.54,0.69,  0.33,0.20,0.14,  0.68,0.56,0.26,  0.25,0.53,0.05,  0.38,0.27,0.40]
+        Icon: GasGiantRing
+        # Distance: [100, 300]
+        Placement:                  # Defines where the playfield appears in the Solar system, related to the Galaxy.ecf Sun parameters: HabitableTemperate, HabitableHot, HabitableCold, InnerSystem, OuterSystem
+            - InnerSystem
+            - HabitableHot
+            - HabitableTemperate
+            - HabitableCold
+            - OuterSystem
+        MoonProb: '1:0.5, 2:0.3, 3:0.2'    # NEW definition of Moon Prob PLUS Count; Gauss. >> can be used for all other definitions in that file!!
+        MoonType: [DefaultMoonPvP, MoonIcePvP, MoonNascentPvP]   
+        # Climate: Gas               # REQUIRED? > not required anymore
+        # PlayfieldLevel: [1,10]     # REQUIRED? > sets default value if not set
+        ForceSizeClass: [8,11]       # this is important for a gasgiant! if this is specified, the moons will not be put in the same sector as the gas giant (as the gas giant fills the whole sector)
+        ForcePlanetType: [SaturnBlue, SaturnBrown, SaturnYellow, SaturnGreen, SaturnPurple]
+        HasOrbit: false              # also a gasgiant may never have an orbit!
+        Playfields:
+            - GasGiant
+      - Name: Neptun 
+        Color: [0.42,0.54,0.31,  0.36,0.30,0.56]
+        Icon: GasGiant
+        Placement:                  # Defines where the playfield appears in the Solar system, related to the Galaxy.ecf Sun parameters: HabitableTemperate, HabitableHot, HabitableCold, InnerSystem, OuterSystem
+            - HabitableCold
+            - OuterSystem
+        MoonProb: '1:0.5, 2'    # NEW definition of Moon Prob PLUS Count; Gauss. >> can be used for all other definitions in that file!!
+        MoonType: [DefaultMoonPvP, MoonIcePvP, MoonNascentPvP]   
+        # Climate: Gas               # REQUIRED? > not required anymore
+        # PlayfieldLevel: [1,10]     # REQUIRED? > sets default value if not set
+        ForceSizeClass: [8,10]
+        ForcePlanetType: [NeptuneGreen, NeptunePurple]
+        HasOrbit: false
+        Playfields:
+            - GasGiant
+      - Name: LavaPvP 
+        Color: [0.57, 0.09, 0.05]
+        Placement:                  # Defines where the playfield appears in the Solar system, related to the Galaxy.ecf Sun parameters: HabitableTemperate, HabitableHot, HabitableCold, InnerSystem, OuterSystem
+            - InnerSystem 
+        MoonProb: '0:0.7, 1:0.15, 2:0.1, 3:0.05'
+        MoonType: [MoonNascentPvP]   
+        Climate: Lava      # added for description text prior to writing files
+        PlayfieldLevel: [6,10]
+        Playfields:
+            - LavaNascentPvP
+      - Name: AridPvP 
+        Color: [0.50, 0.47, 0.04]
+        Placement:                  # Defines where the playfield appears in the Solar system, related to the Galaxy.ecf Sun parameters: HabitableTemperate, HabitableHot, HabitableCold, InnerSystem, OuterSystem
+            - HabitableHot
+        MoonProb: '0:0.7, 1:0.15, 2:0.1, 3:0.05'   
+        MoonType: [MoonNascentPvP, DefaultMoonPvP]   
+        Climate: Arid
+        PlayfieldLevel: [4,8]
+        Playfields:
+            - AridPvP
+      - Name: AlienPvP
+        Color: [0.04, 0.75, 0.74]
+        Placement:                  # Defines where the playfield appears in the Solar system, related to the Galaxy.ecf Sun parameters: HabitableTemperate, HabitableHot, HabitableCold, InnerSystem, OuterSystem
+            - HabitableHot
+            - HabitableTemperate
+            - HabitableCold
+        MoonProb: '0:0.7, 1:0.15, 2:0.1, 3:0.05'  
+        MoonType: [MoonIcePvP, DefaultMoonPvP]              
+        Climate: Alien
+        PlayfieldLevel: [7,10]
+        Playfields:
+            - AlienPvP
+      - Name: BarrenPvP
+        Color: [0.49, 0.49, 0.49]
+        Placement:                  # Defines where the playfield appears in the Solar system, related to the Galaxy.ecf Sun parameters: HabitableTemperate, HabitableHot, HabitableCold, InnerSystem, OuterSystem
+            - HabitableCold
+            - OuterSystem
+        MoonProb: '0:0.7, 1:0.15, 2:0.1, 3:0.05'
+        MoonType: [MoonIcePvP, DefaultMoonPvP]   
+        Climate: Barren  
+        PlayfieldLevel: [5,10]
+        Playfields:
+            - Barren
+            - BarrenMetal           
+
+  # ======== Moon Types ================
+  MoonTypes:
+      - Name: DefaultMoonPvP          # definition of default name 'DefaultMoon' is mandatory
+        Color: [0,0,0]
+        Distance: [6000, 12000]
+        HasOrbit: false
+        HasTerrain: true
+        PlayfieldLevel: [1,10]
+        Playfields:
+            - MoonPvP 
+      - Name: MoonIcePvP
+        Color: [0.16, 0.18, 0.51]
+        Distance: [6000, 12000]
+        HasOrbit: false
+        HasTerrain: true
+        PlayfieldLevel: [1,10]
+        Playfields:
+            - MoonIcePvP    
+      - Name: MoonNascentPvP
+        Color: [0.3, 0.06, 0.04]
+        Distance: [6000, 12000]
+        HasOrbit: false
+        HasTerrain: true
+        PlayfieldLevel: [6,10]
+        Playfields:
+            - MoonNascentPvP 
+
+  # ======== POIs ================
+  POITypes:
+      - Name: SpaceEmpty
+        Color: [0.49, 0.49, 0.49]
+        Icon: SpaceEmpty
+        Placement:
+            - InnerSystem
+            - HabitableHot
+            - HabitableTemperate
+            - HabitableCold
+            - OuterSystem
+        HasOrbit: false
+        HasTerrain: false
+        PlayfieldLevel: [2,10]
+        Playfields:
+            - SpaceEmpty
+      - Name: AsteroidFieldFewPvP
+        Color: [0.49, 0.49, 0.49]
+        Icon: AsteroidFieldFew
+        Placement:
+            - InnerSystem
+            - HabitableHot
+            - HabitableTemperate
+            - HabitableCold
+            - OuterSystem
+        HasOrbit: false
+        HasTerrain: false
+        PlayfieldLevel: [2,10]
+        Playfields:
+            - SpaceAsteroidFieldFewPvP
+      - Name: AsteroidFieldPvP
+        Color: [0.49, 0.49, 0.49]
+        Icon: AsteroidField
+        Placement:
+            - InnerSystem
+            - HabitableHot
+            - HabitableTemperate
+            - HabitableCold
+            - OuterSystem
+        HasOrbit: false
+        HasTerrain: false
+        PlayfieldLevel: [2,10]
+        Playfields:
+            - SpaceAsteroidFieldPvP
+      - Name: AsteroidFieldJunkyardPvP
+        Icon: AsteroidFieldJunkyard
+        Color: [0.49, 0.49, 0.49]
+        Placement:
+            - InnerSystem
+            - HabitableHot
+            - HabitableTemperate
+            - HabitableCold
+            - OuterSystem
+        HasOrbit: false
+        HasTerrain: false
+        PlayfieldLevel: [2,10]
+        Playfields:
+            - SpaceAsteroidFieldJunkyardPvP
+            
+  # ======== Stations ================            
+  StationTypes:
+      - Name: SpaceTradingStationPvP
+        Color: [0.7, 0.5, 0.0]
+        Icon: Station
+        Distance: [200, 300]
+        Placement: 
+          - InnerSystem
+        HasOrbit: false
+        HasTerrain: false
+        PlayfieldLevel: [2,10]
+        Playfields:
+            - SpaceTradingStationPvP
+            
+  # ======== OrbitTypes ================
+  OrbitTypes:
+      - Name: DefaultOrbitPvP     # definition of default name 'DefaultOrbit' is mandatory
+        Color: [0.3, 0.3, 0.3]
+        Distance: [270, 870]
+        HasOrbit: false
+        HasTerrain: false
+        PlayfieldLevel: [2,10]
+        Playfields:
+            - SpaceOrbitPvP

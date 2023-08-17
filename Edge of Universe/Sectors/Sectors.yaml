@@ -1,0 +1,361 @@
+# -------
+# Created with eWSSC v1.11.0
+# Website: https://empyrion-homeworld.net/tools/ewssc
+# -------
+GalaxyMode: true
+Sectors: []
+SolarSystems:
+  - Name: NewaraAlpha
+    StarClass: G
+    Coordinates:
+      - 190
+      - 15
+      - 50
+    Sectors:
+      - Coordinates:
+          - 0
+          - 0
+          - 0
+        Color: '1, 1, 1'
+        SectorMapType: None
+        Playfields:
+          - ['0,0,0', NewaraAlpha, SunRandom, '']
+      - Coordinates:
+          - 2
+          - 0
+          - 0
+        Color: '1, 1, 1'
+        SectorMapType: WarpTarget
+        Playfields:
+          - ['0,0,0', 'NewaraAlpha [Sun Right]', SpaceWarpTarget, '']
+        Allow: []
+        Deny: []
+      - Coordinates:
+          - -2
+          - 0
+          - 0
+        Color: '1, 1, 1'
+        SectorMapType: WarpTarget
+        Playfields:
+          - ['0,0,0', 'NewaraAlpha [Sun Left]', SpaceWarpTarget, '']
+        Allow: []
+        Deny: []
+      - Coordinates:
+          - 0
+          - 2
+          - 0
+        Color: '1, 1, 1'
+        SectorMapType: WarpTarget
+        Playfields:
+          - ['0,0,0', 'NewaraAlpha [Sun Top]', SpaceWarpTarget, '']
+        Allow: []
+        Deny: []
+      - Coordinates:
+          - 0
+          - -2
+          - 0
+        Color: '1, 1, 1'
+        SectorMapType: WarpTarget
+        Playfields:
+          - ['0,0,0', 'NewaraAlpha [Sun Bottom]', SpaceWarpTarget, '']
+        Allow: []
+        Deny: []
+      - Coordinates:
+          - 0
+          - 0
+          - 2
+        Color: '1, 1, 1'
+        SectorMapType: WarpTarget
+        Playfields:
+          - ['0,0,0', 'NewaraAlpha [Sun Front]', SpaceWarpTarget, '']
+        Allow: []
+        Deny: []
+      - Coordinates:
+          - 0
+          - 0
+          - -2
+        Color: '1, 1, 1'
+        SectorMapType: WarpTarget
+        Playfields:
+          - ['0,0,0', 'NewaraAlpha [Sun Back]', SpaceWarpTarget, '']
+        Allow: []
+        Deny: []
+      - Coordinates:
+          - -30
+          - 0
+          - -30
+        Color: '0,0.8,0.8 : 0.5,0.5,0.5 : 0.5,0.5,0.5'
+        SectorMapType: None
+        Playfields:
+          - ['0,0,0', Newara1, Newara_I, 'Human:1']
+          - ['-5702,-3897,-13316', Newara Moon, MoonStarter]
+          - ['5082,-4468,-9314', Newara Moon I, Newara_Moon_I]
+          - ['0,0,0', NewaraAlpha Sector, SpaceOrbitSectorStart, '']
+        Allow: []
+        Deny: []
+      - Coordinates:
+          - 30
+          - 0
+          - -30
+        Color: '0,0.8,0.8 : 0.5,0.5,0.5 : 0.5,0.5,0.5'
+        SectorMapType: None
+        Playfields:
+          - ['0,0,0', Snow Planet, StorySnow]
+          - ['-5702,-3897,-13316', Lava Moon, LavaMoon]
+          - ['9082,-7468,-9314', Lava Moon 1, MoonLava2]
+          - ['0,0,0', Lava Sector, SpaceOrbitStarter, '']
+        Allow: []
+        Deny: []
+      - Coordinates:
+          - 30
+          - 0
+          - 30
+        Color: '0,0.8,0.8 : 0.5,0.5,0.5 : 0.5,0.5,0.5'
+        SectorMapType: None
+        Playfields:
+          - ['0,0,0', Orbital, SpaceOrbitIlmarinen]
+          - ['-5702,-3897,-13316', Persephone Moon, MoonIce]
+          - ['9082,-7468,-9314', Persephone Moon 1, MoonIce2]
+          - ['0,0,0', Cothga Sector, CothgaSector, '']
+        Allow: []
+        Deny: []
+      - Coordinates:
+          - -30
+          - 0
+          - 30
+        Color: '0.04,0.8,0.4 : 0.5,0.5,0.5 : 0.5,0.5,0.5'
+        SectorMapType: None
+        Playfields:
+          - ['0,0,0', Akua, StoryPrairie, 'Human:1']
+          - ['2403,9037,-11729', Akua Moon, MoonTemperateStarter]
+          - ['-8558,-4587,11434', Akua Moon 1, MoonStarterSystem]
+          - ['0,0,0', Akua Sector, SpaceOrbitSectorStart, '']
+        Allow: []
+        Deny: []
+      - Coordinates:
+          - 25
+          - 0
+          - 25
+        Color: '0.7,0.7,0.7'
+        SectorMapType: AsteroidFieldFew
+        Playfields:
+          - ['0,0,0', Newara Asteroid Field I, SpaceAsteroidFieldStarter, '']
+        Allow: []
+        Deny: []
+      - Coordinates:
+          - 40
+          - 0
+          - 25
+        Color: '0.7,0.7,0.7'
+        SectorMapType: AsteroidFieldFew
+        Playfields:
+          - ['0,0,0', Newara Asteroid Field II, SpaceAsteroidFieldJunkyard, '']
+        Allow: []
+        Deny: []
+      - Coordinates:
+          - -25
+          - 0
+          - -16
+        Color: '0.7,0.5,0'
+        SectorMapType: Station
+        Playfields:
+          - ['0,0,0', Trade Station Newara, SpaceAsteroidFieldRich, '']
+        Allow: []
+        Deny: []
+      - Coordinates:
+          - 50
+          - 3
+          - -50
+        Color: '0.49,0.49,0.49'
+        SectorMapType: AsteroidFieldAttention
+        Playfields:
+          - ['0,0,0', Newara Planetary Remnant, SpaceAsteroidFieldUCHHideout, '']
+        Allow: []
+        Deny: []
+  - Name: Prairie
+    StarClass: F
+    Coordinates:
+      - 210
+      - 15
+      - 50
+    Sectors:
+      - Coordinates:
+          - 0
+          - 0
+          - 0
+        Color: '1, 1, 1'
+        SectorMapType: None
+        Playfields:
+          - ['0,0,0', Prairie, SunRandom, '']
+      - Coordinates:
+          - 5
+          - 0
+          - 0
+        Color: '1, 1, 1'
+        SectorMapType: WarpTarget
+        Playfields:
+          - ['0,0,0', 'Prairie [Sun Right]', SpaceWarpTarget, '']
+        Allow: []
+        Deny: []
+      - Coordinates:
+          - -5
+          - 0
+          - 0
+        Color: '1, 1, 1'
+        SectorMapType: WarpTarget
+        Playfields:
+          - ['0,0,0', 'Prairie [Sun Left]', SpaceWarpTarget, '']
+        Allow: []
+        Deny: []
+      - Coordinates:
+          - 0
+          - 5
+          - 0
+        Color: '1, 1, 1'
+        SectorMapType: WarpTarget
+        Playfields:
+          - ['0,0,0', 'Prairie [Sun Top]', SpaceWarpTarget, '']
+        Allow: []
+        Deny: []
+      - Coordinates:
+          - 0
+          - -5
+          - 0
+        Color: '1, 1, 1'
+        SectorMapType: WarpTarget
+        Playfields:
+          - ['0,0,0', 'Prairie [Sun Bottom]', SpaceWarpTarget, '']
+        Allow: []
+        Deny: []
+      - Coordinates:
+          - 0
+          - 0
+          - 5
+        Color: '1, 1, 1'
+        SectorMapType: WarpTarget
+        Playfields:
+          - ['0,0,0', 'Prairie [Sun Front]', SpaceWarpTarget, '']
+        Allow: []
+        Deny: []
+      - Coordinates:
+          - 0
+          - 0
+          - -5
+        Color: '1, 1, 1'
+        SectorMapType: WarpTarget
+        Playfields:
+          - ['0,0,0', 'Prairie [Sun Back]', SpaceWarpTarget, '']
+        Allow: []
+        Deny: []
+      - Coordinates:
+          - 10
+          - 6
+          - 10
+        Color: '1,0.95,0.63'
+        SectorMapType: None
+        Playfields:
+          - ['0,0,0', Prairie B, SunRandom, '']
+        Allow: []
+        Deny: []
+      - Coordinates:
+          - -25
+          - 0
+          - 45
+        Color: '0.6,0.3,0 : 0.5,0.5,0.5 : 0.5,0.5,0.5'
+        SectorMapType: None
+        Playfields:
+          - ['0,0,0', Omicron, Omnicron, 'Human:1']
+          - ['-12751,-3204,7222', Omicron Moon, MoonLava3]
+          - ['12021,2052,-4254', Omicron Moon 1, MoonStarterSystem]
+          - ['0,0,0', Omicron Sector, SpaceOrbitStarter, '']
+        Allow: []
+        Deny: []
+      - Coordinates:
+          - 35
+          - 0
+          - 45
+        Color: '0.1,0.5,0.1 : 0.5,0.5,0.5 : 0.5,0.5,0.5'
+        SectorMapType: None
+        Playfields:
+          - ['0,0,0', Roggery, Ocean, 'Human:1']
+          - ['-12982,-753,-7479', Roggery Moon, MoonTemperateStarter]
+          - ['9751,-7149,8877', Roggery Moon 1, MoonNascent]
+          - ['0,0,0', Roggery Sector, TalnirOrbitStarter, '']
+        Allow: []
+        Deny: []
+      - Coordinates:
+          - -29
+          - 0
+          - -49
+        Color: '0.5,0.3,0 : 0.5,0.5,0.5 : 0.5,0.5,0.5'
+        SectorMapType: None
+        Playfields:
+          - ['0,0,0', Uai, TemperateSwampStarter, 'Human:1']
+          - ['-3820,-14484,-797', Uai Moon, LavaNascent]
+          - ['-8928,-11694,2926', Uai Moon 1, MoonStarter]
+          - ['0,0,0', Uai Sector, SpaceOrbitStarter, '']
+        Allow: []
+        Deny: []
+      - Coordinates:
+          - 45
+          - 0
+          - 55
+        Color: '0.6,0.3,0 : 0.5,0.5,0.5 : 0.5,0.5,0.5'
+        SectorMapType: None
+        Playfields:
+          - ['0,0,0', Sharee, TemperatePlateauStory, 'Human:1']
+          - ['-12751,-3204,7222', Sharee Moon, ManaMoonStarter]
+          - ['163,-9259,-11801', Sharee Moon 1, Moon]
+          - ['0,0,0', Sharee Sector, SpaceOrbitStarter, '']
+        Allow: []
+        Deny: []
+      - Coordinates:
+          - -79
+          - 0
+          - -79
+        Color: '0.7,0.7,0.7'
+        SectorMapType: AsteroidFieldFew
+        Playfields:
+          - ['0,0,0', Prairie Asteroid Field I, SpaceAsteroidFieldStarter, '']
+        Allow: []
+        Deny: []
+      - Coordinates:
+          - 79
+          - 0
+          - 79
+        Color: '0.7,0.7,0.7'
+        SectorMapType: AsteroidFieldFew
+        Playfields:
+          - ['0,0,0', Prairie Asteroid Field II, SpaceAsteroidFieldJunkyard, '']
+        Allow: []
+        Deny: []
+      - Coordinates:
+          - -3
+          - 0
+          - -16
+        Color: '0.7,0.5,0'
+        SectorMapType: Station
+        Playfields:
+          - ['0,0,0', Trade Station Prairie, SpaceAsteroidFieldRich, '']
+        Allow: []
+        Deny: []
+      - Coordinates:
+          - -86
+          - 3
+          - -94
+        Color: '0.49,0.49,0.49'
+        SectorMapType: AsteroidFieldAttention
+        Playfields:
+          - ['0,0,0', Prairie Planetary Remnant, SpaceAsteroidFieldStarter, '']
+        Allow: []
+        Deny: []
+      - Coordinates:
+          - 3
+          - 2
+          - 3
+        Color: '0,0.7,1'
+        SectorMapType: Triangle
+        Playfields:
+          - ['0,0,0', Abyssal_Vessel, SpaceAsteroidFieldAbyssalVessel, '']
+        Allow: []
+        Deny: []
