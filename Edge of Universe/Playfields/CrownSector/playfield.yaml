@@ -1,0 +1,252 @@
+PlayfieldType: Space
+TemperatureDay: -104
+Radiation: 2.09553504
+PlanetType: OrbitStarter
+AtmosphereEnabled: false
+FogCloudIntensity: 1
+CloudsSharpness: 1
+PlayfieldLevel: 1
+BaseAttackCount: 0
+PlanetClass: OrbitStarter
+UseFixed: true
+Build: 4013
+Music: space
+POIs:
+  Fixed:
+  - Type: AsteroidFieldRectangle2
+    Name: Asteroid Field
+    Pos:
+    - 0
+    - -5000
+    - 0
+    Rot:
+    - 0
+    - 0
+    - 0
+  - Type: AsteroidFieldBoxExclude
+    Name: Asteroid Field
+    Pos:
+    - 0
+    - -5000
+    - 0
+    Rot:
+    - 46
+    - 47
+    - -151
+  - Type: AsteroidFieldFewBoxExclude
+    Name: Asteroid Field
+    Pos:
+    - 0
+    - 2500
+    - 0
+    Rot:
+    - 135
+    - 179
+    - -45
+  - Type: AsteroidFieldFewBoxExclude
+    Name: Asteroid Field
+    Pos:
+    - 0
+    - -10000
+    - 0
+    Rot:
+    - 138
+    - 8
+    - 95
+  - Type: AsteroidVoxel02Ice
+    Prefab: AsteroidVoxel02Ice
+    Name: Ice Asteroid
+    Properties:
+    - Key: RegenAfter
+      Value: 180
+    Pos:
+    - -1480
+    - -4808
+    - 1170
+    Rot:
+    - 0
+    - 0
+    - 0
+  - Type: AsteroidVoxel01Ice
+    Prefab: AsteroidVoxel01Ice
+    Name: Ice Asteroid
+    Properties:
+    - Key: RegenAfter
+      Value: 180
+    Pos:
+    - -570
+    - -4808
+    - 1970
+    Rot:
+    - 0
+    - 0
+    - 0
+  - Type: AsteroidVoxel03Ice
+    Prefab: AsteroidVoxel03Ice
+    Name: Ice Asteroid
+    Properties:
+    - Key: RegenAfter
+      Value: 180
+    Pos:
+    - 530
+    - -4808
+    - 1176
+    Rot:
+    - 0
+    - 0
+    - 0
+  - Type: AsteroidVoxel03Ice
+    Prefab: AsteroidVoxel03Ice
+    Name: Ice Asteroid
+    Properties:
+    - Key: RegenAfter
+      Value: 180
+    Pos:
+    - 183
+    - -4808
+    - -466
+    Rot:
+    - 0
+    - 0
+    - 0
+  - Type: AsteroidVoxel01Ice
+    Prefab: AsteroidVoxel01Ice
+    Name: Ice Asteroid
+    Properties:
+    - Key: RegenAfter
+      Value: 180
+    Pos:
+    - 1107
+    - -4658
+    - -1497
+    Rot:
+    - 0
+    - 0
+    - 0
+  - Type: AsteroidVoxel03Ice
+    Prefab: AsteroidVoxel03Ice
+    Name: Ice Asteroid
+    Properties:
+    - Key: RegenAfter
+      Value: 180
+    Pos:
+    - 537
+    - -4660
+    - -452
+    Rot:
+    - 0
+    - 0
+    - 0
+  - Type: AsteroidVoxel01Ice
+    Prefab: AsteroidVoxel01Ice
+    Name: Ice Asteroid
+    Properties:
+    - Key: RegenAfter
+      Value: 180
+    Pos:
+    - 132
+    - -5040
+    - 651
+    Rot:
+    - 0
+    - 0
+    - 0
+  - Type: BA_Alien
+    Prefab: BAOsm_TalonRuinCrown
+    Mode: Survival
+    Name: Derelict Station
+    Faction: Alien
+    Properties:
+    - Key: RegenAfter
+      Value: 720
+    - Key: Music
+      Value: ExtraktTechno
+    - Key: StationInterface
+      Value: Fuel:1.5,O2:1.2,Warp:1,Ammo:0.7,Repair:8,Shield:1,IfNeutral:0.2,IfHonored:-0.20
+    Pos:
+    - 894
+    - -5290
+    - 46
+    Rot:
+    - 0
+    - 75
+    - 0
+    SpaceDefenseOverrideDefaults: true
+  - Type: SV_Player
+    Prefab: SV_TOT-DestroyedWithWarp
+    Mode: Survival
+    Name: Destroyed Transport
+    Faction: None
+    Properties:
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: 720
+    Pos:
+    - 608
+    - -5016
+    - -834
+    Rot:
+    - 0
+    - 75
+    - 0
+  - Type: BA_Alien
+    Prefab: BA_VoidChime
+    Mode: Survival
+    Name: Unknown
+    Faction: None
+    Properties:
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: 180
+    Pos:
+    - -52
+    - -5290
+    - 525
+    Rot:
+    - 0
+    - 0
+    - 0
+    SpaceDefenseOverrideDefaults: true
+  - Type: BA_Alien
+    Prefab: BAO_PiratesSignalRelay01
+    Mode: Survival
+    Name: Asteroid Field
+    Faction: None
+    Properties:
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: 180
+    Pos:
+    - -100
+    - -5290
+    - 525
+    Rot:
+    - 0
+    - 0
+    - 0
+    SpaceDefenseOverrideDefaults: true
+DroneBaseSetup:
+  Fixed:
+  - Pos:
+    - -2576.43286
+    - 953
+    - -5225.34863
+    DroneOnDuty:
+    - Name: SpaceDroneBattered01
+      Faction: Alien
+      POINameAsPositionRef:
+      - BAOBeacons
+      - VOIDArtifacts
+      Pos:
+      - -1538.03979
+      - 964
+      - -6589.89551
+      Radius: 762
+      Properties:
+      - Key: AIManPatrolGroups
+        Value: BAOBeacons, VOIDArtifacts
+      - Key: AIManMaxPursuitRange
+        Value: 2500

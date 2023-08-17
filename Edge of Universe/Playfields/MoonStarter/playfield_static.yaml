@@ -1,0 +1,212 @@
+# 
+# ====================
+# GENERAL SETUP 
+# ====================
+#
+Description: "This barren rock carries its history on the surface: \nCompletely solidified, and no atmosphere to remove tracks and shapes - \nAll encounters will be remembered."
+PlanetClass: Barren
+PlanetType: MoonStarter
+PlayfieldType: Moon
+AtmosphereEnabled: False
+Difficulty: 1
+LandClaimZone: Device
+AtmosphereParams: [1, 1.6]
+DayLightIntensity: 1.6
+NightLightIntensity: 0.7
+SunFlare: EnvironmentalEffects/SunFlareWhiteMoon
+PvP: False
+BaseAttackCount: 0
+AllowBA: True
+AllowCV: True
+AllowSV: True
+AllowHV: True
+AllowBlueprintBA: True
+AllowBlueprintCV: True
+AllowBlueprintSV: True
+AllowBlueprintHV: True
+# 
+# ====================
+# RANDOM RESOURCES
+# ====================
+#
+RandomResources:
+-  Name: IronResource
+   IsScalingCount: True
+   IsImportant: False
+   CountMinMax: [3, 5]
+   SizeMinMax: [8, 13]
+   DepthMinMax: [6, 15]
+   DroneProb: 0.2
+   MaxDroneCount: 1
+-  Name: SiliconResource
+   IsScalingCount: True
+   IsImportant: False
+   CountMinMax: [3, 5]
+   SizeMinMax: [8, 9]
+   DepthMinMax: [6, 15]
+   DroneProb: 0.2
+   MaxDroneCount: 1
+-  Name: CobaltResource
+   IsScalingCount: True
+   IsImportant: False
+   CountMinMax: [2, 3]
+   SizeMinMax: [5, 6]
+   DepthMinMax: [6, 15]
+   DroneProb: 0.2
+   MaxDroneCount: 1
+-  Name: MagnesiumResource
+   IsScalingCount: True
+   IsImportant: False
+   CountMinMax: [2, 3]
+   SizeMinMax: [3, 4]
+   DepthMinMax: [6, 15]
+   DroneProb: 0.2
+   MaxDroneCount: 1
+-  Name: TitanResource
+   IsScalingCount: True
+   IsImportant: False
+   CountMinMax: [2, 3]
+   SizeMinMax: [3, 4]
+   DepthMinMax: [2, 5]
+   DroneProb: 0.2
+   MaxDroneCount: 1
+-  Name: PentaxidResource
+   IsScalingCount: True
+   IsImportant: False
+   CountMinMax: [4, 5]
+   SizeMinMax: [2, 3]
+   DepthMinMax: [0, 5]
+   DroneProb: 0.2
+   MaxDroneCount: 2
+# 
+# ====================
+# ASTEROID RESOURCES
+# ====================
+#
+AsteroidResources:
+-  Name: IronResource
+   Threshold: 0.2
+   Amount: 0.2
+-  Name: SiliconResource
+   Threshold: 0.2
+   Amount: 0.2
+-  Name: CobaltResource
+   Threshold: 0.2
+   Amount: 0.2
+-  Name: MagnesiumResource
+   Threshold: 0.2
+   Amount: 0.2
+-  Name: PromethiumResource
+   Threshold: 0.2
+   Amount: 0.2
+-  Name: PentaxidResource
+   Threshold: 0.2
+   Amount: 0.2
+# 
+# ====================
+# POIS 
+# ====================
+#
+POIs:
+   Random:
+   -  GroupName: DroneBaseT1
+      Faction: Zirax
+      DroneBaseSetup: DroneBaseSetup
+      CountMinMax: [0, 1]
+      DroneProb: 1
+      DronesMinMax: [2, 3]
+      ReserveCount: 5
+      NoShieldReload: True
+      IsCommandCenter: True
+      Properties:
+      -  Key: RegenAfter
+         Value: 720
+   -  GroupName: PolarisMiningMain
+      Faction: Polaris
+      LevelMod: +3
+      BiomesExcluded: [PolarSnow, Radiated, RadiatedFog]
+      CountMinMax: [1, 1]
+      NoShieldReload: True
+      SpawnPOINear: [START]
+      SpawnPOINearDistance: 10000
+      SpawnPOINearRange: [6000, 10000]
+      SpawnPOIAvoidDistance: 6000
+      SpawnResource: ['SiliconResource:1-2', 'PromethiumResource:2']
+      SpawnResourceRange: [150, 400]
+      Properties:
+      -  Key: RegenAfter
+         Value: 720
+   -  GroupName: PolarisMiningAux
+      Faction: Polaris
+      BiomesExcluded: [PolarSnow, Radiated, RadiatedFog]
+      CountMinMax: [2, 3]
+      NoShieldReload: True
+      SpawnPOINear: [PolarisMiningMain]
+      SpawnPOINearRange: [100, 200]
+      Properties:
+      -  Key: RegenAfter
+         Value: 720
+   -  GroupName: PolarisDefence
+      Faction: Polaris
+      BiomesExcluded: [PolarSnow, Radiated, RadiatedFog]
+      CountMinMax: [5, 6]
+      NoShieldReload: True
+      SpawnPOINear: [PolarisMiningMain]
+      SpawnPOINearRange: [300, 400]
+      Properties:
+      -  Key: RegenAfter
+         Value: 720
+   -  GroupName: ProgenitorArtifacts
+      Faction: None
+      CountMinMax: [1, 1]
+      IsScalingCount: True
+      DronesMinMax: [1, 2]
+      ReserveCount: 4
+      TroopTransport: False
+      Properties:
+      -  Key: MapMarker
+         Value: Neutral
+      -  Key: RegenAfter
+         Value: 720
+   -  GroupName: CrashedShip
+      Faction: None
+      CountMinMax: [10, 20]
+      IsScalingCount: True
+      DronesMinMax: [1, 1]
+      ReserveCount: 4
+      TroopTransport: False
+      SpawnPOIAvoid: [CrashedShip]
+      SpawnPOIAvoidDistance: 500
+      Properties:
+      -  Key: MapMarker
+         Value: Neutral
+      -  Key: RegenAfter
+         Value: 720
+   FixedPlayerStart:
+   -  Mode: Debug
+      Pos: [-596, 104, -1063]
+      RotY: 125
+      Status: ['Food:500, Health: 500', 'Food:500, Health: 500', 'Food:500, Health: 500', '#FreshStart:Food:500, Health: 500']
+   -  Mode: Survival
+      Spawn: EscapePod
+      Status: ['Food:500, Health: 500', 'Food:500, Health: 500', 'Food:500, Health: 500', '#FreshStart:Food:500, Health: 500']
+      Armor: ArmorMedium
+# 
+# ====================
+# DRONEBASE SETUP 
+# ====================
+#
+DroneBaseSetup: {}
+# 
+# ====================
+# DRONEBASE SPAWNING 
+# ====================
+#
+DroneSpawning:
+   Random:
+   -  DronesMinMax: [5, 10]
+      CenterX: -2500
+      Radius: 1500
+   -  DronesMinMax: [5, 10]
+      CenterX: 2500
+      Radius: 1500

@@ -1,0 +1,497 @@
+# --------------------------------------------------------------------------------------------------------------------------
+# Created by EPD v2.34.0.5831, Playfield Version: 1.8 [3850] (V1.8)
+# Last Saved: 2022-12-21 09:10:33
+# --------------------------------------------------------------------------------------------------------------------------
+#
+PlanetSize:
+   SizeRange: [3, 4]
+   SizeProbs: [0.6, 0.4]
+PlanetAxis: [-5, 5]
+PlayfieldLevelOverride: [0, 0]
+TemperatureMin: [40, 40]
+TemperatureMax: [100, 100]
+TemperatureNight: [50, 60]
+HumidityMin: [0.05, 0.05]
+HumidityMax: [0.35, 0.35]
+Radiation: [5, 8]
+LandWaterRatio: [0.08, 0.08]
+BaseLevel: [120, 120]
+SeaLevel: [20, 20]
+TerrainLevel: [220, 220]
+TerrainHeightMapMax: 490
+TemperatureHeightRange: [14, 160]
+TemperatureGradientRange: [0.75, 0.1]
+TemperatureNoiseFac: 0.49
+HumidityHeightFac: [20, 325]
+HumidityNoiseFac: 0.54
+GravityMinMax: [-38, -42]
+AtmosphereDensityMinMax: [1.5, 2]
+AtmosphereO2MinMax: [0.005, 0.009]
+WaterProb: 1
+Water: [RockLava03]
+Music: [AlteredPhase]
+BiomeStampTries: 180
+# 
+# ====================
+# BIOMES 
+# ====================
+#
+Biomes:
+-  Name: Pole
+   AmbientSound: ArcticLowPlains
+   IgnoreForcedBiome: True
+   Texture: [11, 11, 0.2]
+   SelectionCriteria:
+   - +Lat > 0.975
+   Color: [0.2, 0.4, 0.2]
+-  Name: ColdPlains
+   AmbientSound: ArcticLowPlains
+   IgnoreForcedBiome: True
+   Texture: [8, 11, 0]
+   UndergroundLayers:
+   - [0, 50]
+   - [14, 10]
+   - [15, -1]
+   - [10, 1]
+   SelectionCriteria:
+   - +Lat > 0.95
+   - Height < 190
+   Color: [0.1, 0.3, 0.7]
+-  Name: LavaLake
+   AmbientSound: Lava
+   IgnoreForcedBiome: True
+   Texture: [10, 10, -0.2]
+   UndergroundLayers:
+   - [15, 1]
+   - [15, -1]
+   - [10, 1]
+   SelectionCriteria:
+   - Height < SeaLevel
+   Color: [1, 0, 0]
+   Temperature: 400
+-  Name: LavaEdge
+   AmbientSound: Lava
+   IgnoreForcedBiome: True
+   Texture: [0, 10, 0.95]
+   UndergroundLayers:
+   - [0, 3]
+   - [14, 7]
+   - [15, -1]
+   - [10, 1]
+   SelectionCriteria:
+   - Height < SeaLevel + 15
+   Color: [1, 0.7, 0.3]
+   Temperature: 200
+-  Name: Abyss
+   AmbientSound: LavaFog
+   IgnoreForcedBiome: True
+   Texture: [3, 2, -0.2]
+   UndergroundLayers:
+   - [3, 20]
+   - [14, 20]
+   - [15, -1]
+   - [10, 1]
+   SelectionCriteria:
+   - Height < 80
+   Color: [0.1, 0.1, 0.1]
+   Temperature: 90
+   Decorations:
+   - [RockResourceErestrum, 0.1, Free, 2.5]
+   - [PromethiumStone, 0.1, Free, 2.5]
+   - [CrystalsPyramidBlue, 0.05, GrsSand, 0.4]
+   - [CrystalsPyramidOrange, 0.25, GrsSand, 0.4]
+   - [CrystalsPyramidOrange, 0.08, Tree, 2.5]
+-  Name: Canyon
+   AmbientSound: LavaFog
+   IgnoreForcedBiome: True
+   Texture: [3, 2, -0.2]
+   UndergroundLayers:
+   - [3, 60]
+   - [14, 10]
+   - [15, -1]
+   - [10, 1]
+   SelectionCriteria:
+   - Height < 100
+   Color: [0.18, 0.18, 0.18]
+   Temperature: 50
+   Decorations:
+   - [CrystalsPyramidBlue, 0.03, Free, 2]
+   - [CrystalsPyramidOrange, 0.03, Free, 2]
+   - [CrystalsPyramidOrange, 0.02, Tree, 2]
+-  Name: Rifts_1
+   AmbientSound: LavaPlains
+   IgnoreForcedBiome: True
+   Texture: [11, 11, 1, 0, 3, 0.5, 0.2]
+   UndergroundLayers:
+   - [11, 30]
+   - [14, 10]
+   - [15, -1]
+   - [10, 1]
+   SelectionCriteria:
+   - false
+   Color: [0.3, 0.1, 0.9]
+   StampForcesBiome: True
+   StampForcesBiomeType: OverlapOff
+   Stamps:
+   - RiftContinent_01
+   StampTries: 10
+   Temperature: 40
+   Decorations:
+   - [RockGrey01Large, 0.14, Free_V, 1.5]
+   - [RockGrey02Large, 0.14, Free_V, 1.5]
+   - [RockResourceCarbon, 0.01, Free_V, 1.5]
+-  Name: Cliffs
+   AmbientSound: ArcticLowPlains
+   IgnoreForcedBiome: True
+   Texture: [8, 5, 0.5, 11, 11, 0.4, 0.2]
+   UndergroundLayers:
+   - [11, 30]
+   - [9, 2]
+   - [11, 60]
+   - [15, -1]
+   - [10, 1]
+   SelectionCriteria:
+   - false
+   Color: [0.8, 0.2, 0.3]
+   StampForcesBiome: True
+   StampForcesBiomeType: OverlapOff
+   Stamps:
+   - ErosionIce_01, 0.5
+   - ErosionIce_02, 0.5
+   - ErosionIce_03, 0.5
+   - CraterMoon_15
+   StampTries: 20
+   Decorations:
+   - [RockGrey01Large, 0.14, Free_V, 1.5]
+   - [RockGrey02Large, 0.14, Free_V, 1.5]
+-  Name: Rifts
+   AmbientSound: LavaFog
+   IgnoreForcedBiome: True
+   Texture: [3, 3, 1, 0, 9, 0.2, 0.1]
+   UndergroundLayers:
+   - [2, 60]
+   - [14, 10]
+   - [15, -1]
+   - [10, 1]
+   SelectionCriteria:
+   - false
+   Color: [0.5, 0.3, 1]
+   StampForcesBiome: True
+   StampForcesBiomeType: OverlapOther
+   Stamps:
+   - RiftLava_2, 0.4
+   - RiftLava_1, 0.8
+   - RiftLava_2b, 0.5
+   - RiftLava_1b, 0.5
+   - CraterLava_1, 0.15
+   - CraterLava_2, 0.08
+   StampTries: 80
+   Temperature: 30
+-  Name: HighMountains
+   AmbientSound: Mountains
+   IgnoreForcedBiome: True
+   Texture: [7, 8, 0.9, 8, 7, 0.9, 0.1]
+   UndergroundLayers:
+   - [8, 10]
+   - [9, 150]
+   - [11, 100]
+   - [14, 10]
+   - [15, -1]
+   - [10, 1]
+   SelectionCriteria:
+   - Height > 380
+   Color: [1, 1, 1]
+   Decorations:
+   - [RealRock10Dark, 0.03, Free_V]
+   - [RockGrey02Large, 0.8, Free_V, 1.5]
+-  Name: Mountains
+   AmbientSound: Mountains
+   IgnoreForcedBiome: True
+   Texture: [8, 11, 0.3]
+   UndergroundLayers:
+   - [8, 6]
+   - [9, 80]
+   - [11, 60]
+   - [14, 10]
+   - [15, -1]
+   - [10, 1]
+   SelectionCriteria:
+   - Height > 250
+   Color: [0.8, 0.5, 0.5]
+   StampProb: 0.3
+   StampForcesBiomeType: OverlapOther
+   Stamps:
+   - Mountain_10_sp, 1, S, 3, T, 6
+   Decorations:
+   - [RockGrey01Large, 0.14, Free_V, 1.5]
+   - [RockGrey02Large, 0.14, Free_V, 1.5]
+   - [RealRock10Dark, 0.002, SandBu_Tree, 2]
+   - [RealRock4Dark, 0.02, SandBushIn, 3]
+   - [RockResourceIron, 0.01, SandBush, 1.5]
+-  Name: LowMountains
+   AmbientSound: ArcticLowPlains
+   IgnoreForcedBiome: True
+   Texture: [5, 4, 0.5, 11, 11, 0.5, 0.2]
+   UndergroundLayers:
+   - [9, 60]
+   - [11, 60]
+   - [14, 10]
+   - [15, -1]
+   - [10, 1]
+   SelectionCriteria:
+   - Height > 230
+   Color: [0.6, 0.4, 0.4]
+   StampForcesBiome: True
+   StampForcesBiomeType: OverlapOwn
+   Stamps:
+   - MountainPlateau_01_sp, 1, S, 3, T, 6
+   - MountainPlateau_04_sp, 1, S, 3, T, 6
+   - MountainPlateau_01_sp, 1, S, 1, 3, T
+   - MountainPlateau_04_sp, 1, S, 1, 3, T
+   StampTries: 100
+   Decorations:
+   - [RockGrey01Large, 0.15, Free_V, 1.5]
+   - [RockGrey02Large, 0.15, Free_V, 1.5]
+   - [RealRock4Dark, 0.009, Free_V, 1.5]
+   - [RealRock3, 0.005, SandBu_Tree]
+   - [RealRock10, 0.05, SandBushIn]
+   - [RealRock10Dark, 0.01, SandBush, 1.2]
+   - [RockResourceNeodymium, 0.025, Free, 2.5]
+   - [RockResourceZascosium, 0.01, SandBushOut, 0.5]
+   - [RockResourceIron, 0.02, Free_V_C, 2]
+   - [RockResourceIron, 0.02, SandBush, 1.3]
+   - [RockResourceCarbon, 0.01, SandBush]
+-  Name: LowMountains_1
+   AmbientSound: ArcticLowPlains
+   IgnoreForcedBiome: True
+   Texture: [5, 4, 0.5, 11, 11, 0.5, 0.2]
+   UndergroundLayers:
+   - [9, 60]
+   - [11, 60]
+   - [14, 10]
+   - [15, -1]
+   - [10, 1]
+   SelectionCriteria:
+   - false
+   Color: [0.6, 0.35, 0.45]
+   StampForcesBiome: True
+   StampForcesBiomeType: OverlapOff
+   Stamps:
+   - MountainPlateau_01_sp, 1, S, 3, T, 6
+   - MountainPlateau_01_sp, 1, S, 1, 3, T
+   StampTries: 2000
+   Decorations:
+   - [RockGrey01Large, 0.14, Free_V, 1.5]
+   - [RockGrey02Large, 0.14, Free_V, 1.5]
+-  Name: LavaPlains
+   AmbientSound: LavaFog
+   IgnoreForcedBiome: True
+   Texture: [3, 3, 1, 2, 0, 0.8, -0.2]
+   UndergroundLayers:
+   - [15, 1]
+   - [14, 10]
+   - [10, 1]
+   - [15, 3]
+   - [14, 1]
+   - [15, 1]
+   - [14, 30]
+   - [15, -1]
+   - [10, 1]
+   SelectionCriteria:
+   - Height < 140
+   - Height > 135
+   Color: [0.18, 0.37, 0.32]
+   StampProb: 0.15
+   StampForcesBiomeType: OverlapOther
+   Stamps:
+   - MountainPlateau_07_sp, 1, 10, 1, 0, 3
+   - MountainPlateau_08_sp, 0.5, 10, 1, 0, 3
+   - MountainPlateau_07_sp, 1, S, T, 10, 0
+   - MountainPlateau_08_sp, 0.5, 0, T, 8, 3
+   - MountainEroded_01a_sp, 0.05, 0, 10, 8, 2
+   - MountainEroded_01b_sp, 0.1, 8, 0, 10, 2
+   - MountainEroded_01b_sp, 0.1, 9, 0, 3, 2
+   Temperature: 20
+   Decorations:
+   - [GasEmitter1, 0.008, Free_V]
+   - [RealRock1Dark, 0.08, Free_V, 1.5]
+   - [RealRock2Dark, 0.05, Free_V, 2]
+   - [RealRock3Dark, 0.1, Free_V, 1.5]
+   - [RealRock4Dark, 0.04, Free_V, 1.5]
+   - [RealRock8Dark, 0.04, Free_V]
+   - [RealRock10Dark, 0.1, Free_V, 1.5]
+   - [CrystalsPyramidOrange, 0.002, Free, 2.2]
+   - [CrystalsPyramidOrange, 0.015, Tree, 2.2]
+   - [RockResourceZascosium, 0.015, BigPlant, 2.3]
+   - [RockResourceCarbon, 0.04, Tree_V]
+-  Name: Bubble
+   AmbientSound: BarrenOpenPlains
+   IgnoreForcedBiome: True
+   Texture: [2, 3, 0.3]
+   UndergroundLayers:
+   - [14, 10]
+   - [15, -1]
+   - [10, 1]
+   SelectionCriteria:
+   - false
+   Color: [0.8, 0.4, 0]
+   StampForcesBiome: True
+   StampForcesBiomeType: OverlapOff
+   Stamps:
+   - CraterMoon_01, 0.9
+   - CraterMoon_02, 0.7
+   - CraterMoon_03, 0.5
+   - CraterMoon_1, 0.2
+   - CraterMoon_2, 0.1
+   - CraterMoon_3, 0.07
+   StampTries: 1900
+   Temperature: 20
+   Decorations:
+   - [GasEmitter1, 0.002, Free_V, 1.5]
+   - [PromethiumStone, 0.02, Free, 2]
+   - [RockResourceCobalt, 0.04, BigPlant, 2.6]
+   - [RockResourceZascosium, 0.04, BigPlant_V_C, 2]
+   - [CrystalsPyramidBlue, 0.02, Free, 2.5]
+   - [CrystalsPyramidOrange, 0.3, Free, 2.5]
+   - [CrystalsPyramidOrange, 0.1, Tree, 2.5]
+   - [RockResourceCarbon, 0.5, Tree_V]
+-  Name: CrystallizedRocks
+   AmbientSound: LavaFog
+   Texture: [1, 2, 0.1]
+   UndergroundLayers:
+   - [14, 1]
+   - [8, 50]
+   - [14, 10]
+   - [15, -1]
+   - [10, 1]
+   SelectionCriteria:
+   - Height < 120
+   - Height > 100
+   Color: [0.05, 0.25, 0.05]
+   Temperature: 30
+   Decorations:
+   - [AridRock01, 0.01, Free_V, 1.5]
+   - [AridRock02, 0.006, Free_V, 1.5]
+   - [AridRock03, 0.015, Free_V, 1.5]
+   - [GasEmitter1, 0.015, Free_V, 1.5]
+   - [RealRock1Dark, 0.03, Free_V, 1.5]
+   - [RealRock2Dark, 0.01, Free_V, 1.5]
+   - [RealRock3Dark, 0.03, Free_V, 1.5]
+   - [RealRock4Dark, 0.03, Free_V, 1.5]
+   - [RealRock8Dark, 0.03, Free_V, 1.5]
+   - [RealRock10Dark, 0.05, Free_V, 1.5]
+   - [RockGrey01Large, 0.1, Free_V, 1.5]
+   - [RockGrey02Large, 0.01, Free_V, 1.5]
+   - [CrystalsPyramidOrange, 0.001, Free, 2]
+   - [CrystalsPyramidOrange, 0.08, Tree, 2]
+   - [RockResourceErestrum, 0.01, BigPlant, 2.5]
+   - [RockResourceNeodymium, 0.01, BigPlant, 2.5]
+   - [RockResourceCobalt, 0.01, Plant, 2.5]
+-  Name: LavaFolds
+   AmbientSound: ArcticLowPlains
+   Texture: [3, 2, -1]
+   UndergroundLayers:
+   - [8, 70]
+   - [14, 10]
+   - [15, -1]
+   - [10, 1]
+   SelectionCriteria:
+   - Height < 140
+   Color: [0.1, 0.31, 0.31]
+   StampProb: 0.15
+   StampForcesBiomeType: OverlapOther
+   Stamps:
+   - MountainPlateau_07_sp, 1, 11, 5, 3, 6
+   - MountainPlateau_08_sp, 0.5, 11, 5, 3, 6
+   - MountainPlateau_07_sp, 1, S, T, 9, 8
+   - MountainPlateau_08_sp, 0.5, S, T, 9, 8
+   - MountainPlateau_07_sp, 1, S, T, 1, 8
+   - MountainPlateau_08_sp, 0.5, S, T, 2, 8
+   Temperature: 20
+   Decorations:
+   - [RockGrey01Large, 0.1, Free_V, 1.5]
+   - [RockGrey02Large, 0.14, Free_V, 1.5]
+   - [RockResourceSilicon, 0.001, Free, 3]
+   - [RockResourceSilicon, 0.01, Tree, 3]
+   - [RockResourceIron, 0.002, Free_V_C, 2.5]
+   - [RockResourceCarbon, 0.05, Free_V, 1.5]
+-  Name: Hotspot
+   AmbientSound: BarrenOpenPlains
+   Texture: [11, 11, 1, 0, 10, 0.75, 0.2]
+   UndergroundLayers:
+   - [14, 10]
+   - [15, -1]
+   - [10, 1]
+   SelectionCriteria:
+   - false
+   Color: [0.6, 0.6, 0]
+   StampForcesBiome: True
+   StampForcesBiomeType: OverlapAll
+   Stamps:
+   - CraterMoon_1, 0.9
+   - CraterMoon_3, 0.4
+   - CraterLava_3, 0.05
+   StampTries: 100
+   Temperature: 90
+-  Name: Sand
+   AmbientSound: ArcticLowPlains
+   Texture: [5, 11, -0.1]
+   UndergroundLayers:
+   - [5, 2]
+   - [11, 100]
+   - [14, 10]
+   - [15, -1]
+   - [10, 1]
+   SelectionCriteria:
+   - Humidity < 0.10
+   - Temperature > 42
+   Color: [0.45, 0.48, 0.45]
+   Temperature: 10
+   Decorations:
+   - [RealRock4Dark, 0.001, SandBu_Tree, 0.6]
+   - [RealRock3Dark, 0.001, SandBu_Tree, 0.6]
+   - [RealRock1Dark, 0.001, SandBu_Tree, 0.6]
+   - [RockGrey01Large, 0.3, Free_V, 1.5]
+   - [RockGrey02Large, 0.1, Free_V]
+   - [RockGrey02Large, 0.1, SandBushIn, 1.2]
+   - [RockGrey01Large, 0.05, SandBushOut, 0.5]
+   - [RockGrey02Large, 0.006, Free_V]
+   - [RockResourceCobalt, 0.001, Free, 2.5]
+   - [RockResourceSilicon, 0.01, SandBush, 1.5]
+   - [RockResourceSilicon, 0.1, Tree_V, 0.7]
+   - [RockResourceCarbon, 0.001, Tree_V, 1.5]
+-  Name: BarrenRocks
+   AmbientSound: ArcticLowPlains
+   Texture: [4, 6, 0.55, 11, 11, 0.8, 0]
+   UndergroundLayers:
+   - [11, 80]
+   - [14, 10]
+   - [15, -1]
+   - [10, 1]
+   SelectionCriteria:
+   - true
+   Color: [0.35, 0.38, 0.43]
+   Temperature: 10
+   Decorations:
+   - [RockGrey01Large, 0.03, Free, 1.5]
+   - [RockGrey01Large, 0.03, Plant, 1.5]
+   - [RockGrey01Large, 0.14, BigPlant_V]
+   - [RockGrey02Large, 0.07, BigPlant_V]
+   - [RockGrey02Large, 0.014, SandBushOut, 0.9]
+   - [RockGrey02Large, 0.002, SandBushOut, 2]
+   - [RealRock4Dark, 0.015, Free_V, 1.5]
+   - [RealRock3Dark, 0.015, Free_V, 0.51]
+   - [RealRock1Dark, 0.015, Free_V, 1.5]
+   - [RealRock10Dark, 0.015, Free_V, 1.5]
+   - [RealRock3Dark, 0.01, SandBu_Tree]
+   - [RealRock1Dark, 0.1, SandBushIn]
+   - [RealRock10Dark, 0.008, SandBush, 1.7]
+   - [RealRock4Dark, 0.008, SandBush, 2]
+   - [RockResourceSilicon, 0.03, Free, 3]
+   - [RockResourceSilicon, 0.01, SandBush, 2.5]
+   - [RockResourceIron, 0.03, Free_V_C, 2.5]
+   - [RockResourceCopper, 0.1, SandBuIn_C, 1.5]
+   - [RockResourceNeodymium, 0.005, SandBush_V, 0.7]
+   - [RockResourceCarbon, 0.02, SandBush_V, 0.75]
+   - [RockResourceCarbon, 0.05, Free_V]
+   UndergroundLayersDefault: True

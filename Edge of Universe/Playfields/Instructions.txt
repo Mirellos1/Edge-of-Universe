@@ -1,0 +1,11 @@
+---------------------------------------------
+Here you can place playfields. The game will use playfields from this folder first, and then use them from the default folder if they don't exist here.
+You can for example modify the TemperateStarter playfield and place it in here, while leaving all the other planets as default.
+Or you can create a new playfield and add it to your scenario.
+
+
+Aquí puedes colocar campos de juego. El juego usará campos de juego de esta carpeta primero y luego los usará de la carpeta predeterminada si no existen aquí.
+Por ejemplo, puede modificar el campo de juego TemperateStarter y colocarlo aquí, mientras deja todos los demás planetas como predeterminados.
+O puede crear un nuevo campo de juego y agregarlo a su escenario.
+
+--------------------------------------------

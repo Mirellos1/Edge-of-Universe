@@ -1,0 +1,306 @@
+# --------------------------------------------------------------------------------------------------------------------------
+# Created by EPD v2.34.0.5831, Playfield Version: 1.8 [3850] (V1.8)
+# Last Saved: 2022-12-21 09:57:32
+# --------------------------------------------------------------------------------------------------------------------------
+#
+TemperatureDay: [-130, -100]
+Radiation: [2, 4]
+UseFixed: True
+PvPProb: 0.5
+Gravity: 0
+AtmosphereEnabled: False
+Music: [moonstone, space]
+PlayfieldType: Space
+PlanetType: OrbitStarter
+BaseAttackCount: 0
+Resources:
+-  Name: [AsteroidVoxel01Iron, AsteroidVoxel02Iron, AsteroidVoxel03Iron]
+   DisplayName: Iron Asteroid
+   CountMinMax: [1, 2]
+   Probability: 1
+   Properties:
+   -  Key: RegenAfter
+      Value: 180
+-  Name: [AsteroidVoxel01Silicon, AsteroidVoxel02Silicon, AsteroidVoxel03Silicon]
+   DisplayName: Silicon Asteroid
+   CountMinMax: [1, 2]
+   Probability: 1
+   Properties:
+   -  Key: RegenAfter
+      Value: 180
+-  Name: [AsteroidVoxel01Copper, AsteroidVoxel02Copper, AsteroidVoxel03Copper]
+   DisplayName: Copper Asteroid
+   CountMinMax: [1, 2]
+   Probability: 1
+   Properties:
+   -  Key: RegenAfter
+      Value: 180
+-  Name: [AsteroidVoxel01Cobalt, AsteroidVoxel02Cobalt, AsteroidVoxel03Cobalt]
+   DisplayName: Cobalt Asteroid
+   CountMinMax: [1, 2]
+   Probability: 1
+   Properties:
+   -  Key: RegenAfter
+      Value: 180
+-  Name: [AsteroidVoxel01Promethium, AsteroidVoxel02Promethium, AsteroidVoxel03Promethium]
+   DisplayName: Promethium Asteroid
+   CountMinMax: [1, 2]
+   Probability: 1
+   Properties:
+   -  Key: RegenAfter
+      Value: 180
+-  Name: [AsteroidVoxel01Ice, AsteroidVoxel02Ice, AsteroidVoxel03Ice]
+   DisplayName: Ice Asteroid
+   CountMinMax: [2, 4]
+   Probability: 1
+   Properties:
+   -  Key: RegenAfter
+      Value: 180
+POIs:
+-  Name: [AsteroidFieldBoxExclude, AsteroidFieldFewBoxExclude, AsteroidRingPlanet]
+   FieldName: [AsteroidField, AsteroidFieldRectangle2]
+   CountMinMax: [1, 1]
+   Probability: 1
+   BaseField: True
+   RandomRotation: True
+-  Type: BA_Alien
+   SpaceDefenseOverrideDefaults: True
+   Name: [TSO_AkuaOrbit]
+   DisplayName: Orbital Trading Station
+   Faction: Trader
+   Mode: Survival
+   SpaceDefenseProbability: 0
+   CountMinMax: [1, 1]
+   Probability: 1
+   InitPower: True
+   Properties:
+   -  Key: Music
+      Value: NebularClouds
+   -  Key: PvEArea
+      Value: 500
+   -  Key: Discovery
+      Value: False
+   -  Key: StationInterface
+      Value: "Fuel:1.1, O2:1.1, Warp:1.1, Ammo:1, Shield:2, Repair:2, IfNeutral:0, IfFriendly:-0.1, IfHonored:-0.2"
+-  Type: BA_Alien
+   SpaceDefenseOverrideDefaults: True
+   Name: [BAO_TOPSpiceDestillery]
+   DisplayName: TOP Destillery
+   Faction: Trader
+   Mode: Survival
+   SpaceDefenseProbability: 0
+   CountMinMax: [1, 1]
+   Probability: 1
+   InitPower: True
+   Properties:
+   -  Key: RegenAfter
+      Value: 720
+   -  Key: Music
+      Value: Vanguard
+-  Type: BA_Alien
+   SpaceDefenseOverrideDefaults: True
+   Name: [BA_EleonsInferno]
+   DisplayName: INFERNO Club
+   Faction: Trader
+   Mode: Survival
+   SpaceDefenseProbability: 0
+   CountMinMax: [1, 1]
+   Probability: 1
+   InitPower: True
+   Properties:
+   -  Key: RegenAfter
+      Value: 720
+   -  Key: Music
+      Value: ExtraktTechno
+   -  Key: StationInterface
+      Value: "Fuel:1.5, O2:1.2, Warp:1, Ammo:0.7, Shield:1, Repair:8, IfNeutral:0.2, IfHonored:-0.2"
+-  Type: BA_Alien
+   SpaceDefenseOverrideDefaults: True
+   Name: [BAO_PirateBaseStory]
+   DisplayName: Hidden Station
+   Faction: Pirates
+   Mode: Survival
+   SpaceDefenseProbability: 0
+   CountMinMax: [1, 1]
+   Probability: 1
+   InitPower: True
+   Properties:
+   -  Key: RegenAfter
+      Value: 720
+   -  Key: Music
+      Value: DarkSoundscape3
+   -  Key: StationInterface
+      Value: "All, IfNeutral:0.05, IfFriendly:-0.05, IfHonored:-0.1"
+-  Type: BA_Alien
+   Name: [BAO_BurntOutReconVessel, BAO_CombatWreckage, BAO_JettisonedCargoPod, BAO_SeveredShip, BAO_TornThrusterArray, CVJ_X-Calibur, SV_FA005XHunter]
+   DisplayName: Wreckage
+   Faction: None
+   Mode: Survival
+   CountMinMax: [1, 8]
+   Probability: 0.1
+   InitPower: True
+   Properties:
+   -  Key: RegenAfter
+      Value: 720
+-  Type: BA_Alien
+   SpaceDefenseOverrideDefaults: True
+   Name: [BAO_PolarisAlloySynthesis]
+   DisplayName: Alloy Synthesis Factory
+   Faction: Polaris
+   Mode: Survival
+   SpaceDefenseProbability: 0
+   CountMinMax: [0, 1]
+   Probability: 1
+   InitPower: True
+   Properties:
+   -  Key: RegenAfter
+      Value: 720
+   -  Key: Music
+      Value: Vanguard
+   -  Key: StationInterface
+      Value: "Fuel:4, O2:4, IfNeutral:0, IfFriendly:-0.1, IfHonored:-0.2"
+-  Type: BA_Alien
+   SpaceDefenseOverrideDefaults: True
+   Name: [BAO_RadosRepairStation]
+   DisplayName: Resupply Station
+   Faction: Zirax
+   Mode: Survival
+   SpaceDefenseProbability: 0
+   CountMinMax: [1, 2]
+   Probability: 0.8
+   InitPower: True
+   Properties:
+   -  Key: RegenAfter
+      Value: 720
+   -  Key: Music
+      Value: Vanguard
+   -  Key: StationInterface
+      Value: "Fuel:1.2, O2:1.2, Warp:1.2, Ammo:3, IfNeutral:0.2, IfFriendly:-0.05, IfHonored:-0.1"
+-  Type: BA_Alien
+   SpaceDefenseOverrideDefaults: True
+   Name: [BAO_XenuShipyard, BAO_GhystShipyard]
+   DisplayName: Shipyard
+   Faction: Zirax
+   Mode: Survival
+   SpaceDefenseProbability: 0
+   CountMinMax: [1, 1]
+   Probability: 0.9
+   InitPower: True
+   Properties:
+   -  Key: RegenAfter
+      Value: 720
+   -  Key: Music
+      Value: Vanguard
+   -  Key: StationInterface
+      Value: "Fuel:1.6, O2:1.6, Warp:1.6, Ammo:3, Shield:3, Repair:2, IfNeutral:0.2, IfFriendly:-0.05, IfHonored:-0.1"
+-  Type: BA_Alien
+   SpaceDefenseOverrideDefaults: True
+   Name: [BAO_GhystDefence1, BAO_GhystDefence2]
+   DisplayName: Defence Station
+   Faction: Zirax
+   Mode: Survival
+   SpaceDefenseProbability: 0
+   CountMinMax: [2, 4]
+   Probability: 0.8
+   InitPower: True
+   Properties:
+   -  Key: RegenAfter
+      Value: 720
+   -  Key: Music
+      Value: Vanguard
+-  Type: BA_Player
+   Name: [BAO_Ramparts]
+   DisplayName: Outpost Akua Orbit
+   Mode: Creative
+   SubMode: Normal
+   Pos: [65, -2000, -6800]
+   Rot: [0, 75, 0]
+   CountMinMax: [1, 1]
+   Probability: 1
+   InitPower: True
+   Properties:
+   -  Key: RegenAfter
+      Value: 720
+-  Type: BA_Player
+   Name: [BA_EmptyPlane]
+   DisplayName: Platform
+   Mode: Creative
+   SubMode: Empty
+   Pos: [65, -2000, -6800]
+   Rot: [0, 75, 0]
+   CountMinMax: [1, 1]
+   Probability: 1
+   InitPower: True
+   Properties:
+   -  Key: RegenAfter
+      Value: 720
+-  Type: SV_Player
+   Name: [SV_Viper]
+   DisplayName: Fighter MKII
+   Mode: Creative
+   SubMode: Normal
+   Pos: [56.6, -1961.3, -6805.5]
+   Rot: [0, -115, 0]
+   CountMinMax: [1, 1]
+   Probability: 1
+   InitPower: True
+-  Type: SV_Player
+   Name: [SV_Viper]
+   DisplayName: Fighter MKII
+   Mode: Creative
+   SubMode: Empty
+   Pos: [69, -1997, -6799]
+   Rot: [0, -69, 0]
+   CountMinMax: [1, 1]
+   Probability: 1
+   InitPower: True
+DroneBaseSetup:
+-  FreeDrones:
+   -  Name: [SpaceDroneLaser, SpaceDronePlasma]
+      Faction: Zirax
+      CanNotBeControlledByMasterAI: False
+      Count: [6, 10]
+      Radius: [2500, 8000]
+      Properties:
+      -  Key: AIManPatrolFactions
+         Value: Polaris, Zirax, Trader
+      -  Key: AIManMaxPursuitRange
+         Value: 5000
+   SpaceVessels:
+   -  Name: [Freighter]
+      Faction: Polaris
+      CountMinMax: [3, 5]
+      Probability: 1
+      FixedMaxSpeed: [20, 40]
+      CanNotBeControlledByMasterAI: False
+      Mission: Freighter
+      MissionDescription:
+         RadiusMinMax: [0, 0]
+         Position:
+            PosXZMinMax: [1000, 2500]
+            PosYMax: 2500
+         DelayBetweenRespawnMinMax: [300, 600]
+         DelayBeforeSelfDestructionMinMax: [200, 250]
+         IsRespawnAfterDestruction: True
+      StockDescription:
+         Name: [SpaceDronePolarisLaser]
+         AmountMinMax: [3, 5]
+         ExtraMinMax: [0, 0]
+         Type: FighterDrone
+FixedPlayerStart:
+-  Mode: Creative
+   SubMode: Empty
+   Pos: [61, -1996, -6805]
+   RotY: 14
+   Status: ['Food:500, Health: 500', 'Food:500, Health: 500', 'Food:500, Health: 500', '#FreshStart:Food:500, Health: 500']
+   Armor: ArmorMedium
+-  Mode: Creative
+   SubMode: Normal
+   Pos: [89, -1932, -6795]
+   RotY: -90
+   Status: ['Food:500, Health: 500', 'Food:500, Health: 500', 'Food:500, Health: 500', '#FreshStart:Food:500, Health: 500']
+   Armor: ArmorMedium
+-  Mode: Debug
+   Pos: [65, -1900, -6800]
+   RotY: 160
+   Status: ['Food:500, Health: 500', 'Food:500, Health: 500', 'Food:500, Health: 500', '#FreshStart:Food:500, Health: 500']
